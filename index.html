@@ -5,40 +5,180 @@
 	<meta charset="utf-8">
 	
 	<!--Bootstrap 4 CSS-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 	
 </head>
 <body>
 	<div class="container">
-		<h1>Dados GET and POST</h1>
-		<div class="row">
-			<div class="form-group">
-				<form>
-					<label>Nome:</label>
-					<input type="text" name="name" id="name">
-					<label>Email</label>
-					<input type="text" name="email" id="email">
-					<label>Senha</label>
-					<input type="text" name="pass" id="pass">
-					<button type="button" class="btn btn-success" id="enviar">Enviar</button>
-				</form>
-				<div class="row">
-					<table class="table">
-						<thead>
-							<tr>
-								<th>#</th>
-								<th>Nome</th>
-								<th>Email</th>
-								<th>Ações</th>
-							</tr>
-						</thead>
-						<tbody id="saida">							
-						</tbody>
-					</table>
-				</div>				
-			</div>
+		<div class="page-header">
+			<h1>Banco de Voluntários CCDP</h1>      
 		</div>
+		<div class="row">
+			<form class="form-horizontal">
+				<fieldset>
+
+					<!-- Form Name -->
+					<legend>Cadastro de Voluntários</legend>
+
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="textinput">Identificação</label>  
+						<div class="col-md-6">
+							<input id="nome" placeholder="Informe Seu Nome Completo" class="form-control input-md" required="" type="text">
+
+						</div>
+					</div>
+
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="textinput">Email</label>  
+						<div class="col-md-4">
+							<input id="email" placeholder="Email Para Contato" class="form-control input-md" required="" type="text">
+
+						</div>
+					</div>
+
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="textinput">Telefone</label>  
+						<div class="col-md-2">
+							<input id="tel" placeholder="Informe Telefone de Contato" class="form-control input-md" required="" type="text">
+
+						</div>
+					</div>
+
+					<!-- Prepended text-->
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="prependedtext">Documentação</label>
+						<div class="col-md-3">
+							<div class="input-group">
+								<span class="input-group-addon">Nº CPF</span>
+								<input id="cpf" class="form-control" placeholder="" required="" type="text">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="input-group">
+								<span class="input-group-addon">Nº RG</span>
+								<input id="rg" class="form-control" placeholder="" required="" type="text">
+							</div>
+
+						</div>
+					</div>				
+
+					<!-- Multiple Radios (inline) -->
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="radios">Sexo</label>
+						<div class="col-md-4"> 
+							<label class="radio-inline" for="radios-0">
+								<input name="radios" id="feminino" value="feminino" type="radio">
+								Feminino
+							</label> 
+							<label class="radio-inline" for="radios-1">
+								<input name="radios" id="masculino" value="masculino" type="radio">
+								Masculino
+							</label>
+						</div>
+					</div>
+
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="textinput">Endereço</label>  
+						<div class="col-md-4">
+							<input id="endereco" name="textinput" placeholder="Logadouro, Número, Bairro" class="form-control input-md" required="" type="text">
+
+						</div>
+					</div>
+
+					<!-- Select Basic -->
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="selectbasic">Estado</label>
+						<div class="col-md-4">
+							<select name="estados-brasil" id="estado">
+								<option value="0">SELECIONE SEU ESTADO</option>
+								<option value="AC">Acre</option>
+								<option value="AL">Alagoas</option>
+								<option value="AP">Amapá</option>
+								<option value="AM">Amazonas</option>
+								<option value="BA">Bahia</option>
+								<option value="CE">Ceará</option>
+								<option value="DF">Distrito Federal</option>
+								<option value="ES">Espírito Santo</option>
+								<option value="GO">Goiás</option>
+								<option value="MA">Maranhão</option>
+								<option value="MT">Mato Grosso</option>
+								<option value="MS">Mato Grosso do Sul</option>
+								<option value="MG">Minas Gerais</option>
+								<option value="PA">Pará</option>
+								<option value="PB">Paraíba</option>
+								<option value="PR">Paraná</option>
+								<option value="PE">Pernambuco</option>
+								<option value="PI">Piauí</option>
+								<option value="RJ">Rio de Janeiro</option>
+								<option value="RN">Rio Grande do Norte</option>
+								<option value="RS">Rio Grande do Sul</option>
+								<option value="RO">Rondônia</option>
+								<option value="RR">Roraima</option>
+								<option value="SC">Santa Catarina</option>
+								<option value="SP">São Paulo</option>
+								<option value="SE">Sergipe</option>
+								<option value="TO">Tocantins</option>
+							</select>
+						</div>
+					</div>
+
+					<!-- Button -->
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="singlebutton"></label>
+						<div class="col-md-4">
+							<button type="button" class="btn btn-success" id="enviar">Enviar Dados</button>
+						</div>
+					</div>
+
+				</fieldset>
+			</form>			
+		</div>
+
+		<fieldset>
+			<legend>Voluntários Cadastrados</legend>
+		</fieldset>
+		<div class="row">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Nome</th>
+						<th>Email</th>
+						<th>Telefone</th>
+						<th>CPF</th>
+						<th>RG</th>
+						<th>Endereço</th>
+						<th>Estado</th>
+					</tr>
+				</thead>
+				<tbody id="saida">
+					<template id="mustache_modelo"><!--Crio a Tag template do mustache e monto a estrutura que vai receber as informações-->
+						<tr >
+							<td>{{id}}</td>
+							<td>{{nome}}</td>
+							<td>{{email}}</td>							
+							<td>{{tel}}</td>
+							<td>{{cpf}}</td>
+							<td>{{sexo}}</td>
+							<td>{{rg}}</td>
+							<td>{{endereco}}</td>
+							<td>{{estado}}</td>
+
+							<td>
+								<button class="btn btn-danger remove" data-id='{{id}}'>DELETE</button>
+							</td>							
+						</tr>							
+					</template>								
+				</tbody>
+			</table>
+		</div>				
+
+		
 	</div>
 
 
