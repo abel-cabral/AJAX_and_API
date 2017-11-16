@@ -15,7 +15,7 @@
 			<h1>Banco de Voluntários CCDP</h1>      
 		</div>
 		<div class="row">
-			<form class="form-horizontal">
+			<form class="form-horizontal" action="" method="post">
 				<fieldset>
 
 					<!-- Form Name -->
@@ -23,44 +23,44 @@
 
 					<!-- Text input-->
 					<div class="form-group">
-						<label class="col-md-4 control-label" for="textinput">Identificação</label>  
-						<div class="col-md-6">
-							<input id="nome" placeholder="Informe Seu Nome Completo" class="form-control input-md" required="" type="text">
+						<label class="col-sm-2 control-label" for="textinput">Identificação</label>  
+						<div class="col-sm-6">
+							<input id="nome" name="nome" placeholder="Informe Seu Nome Completo" class="form-control input-md" required="" type="text">
 
 						</div>
 					</div>
 
 					<!-- Text input-->
 					<div class="form-group">
-						<label class="col-md-4 control-label" for="textinput">Email</label>  
-						<div class="col-md-4">
-							<input id="email" placeholder="Email Para Contato" class="form-control input-md" required="" type="text">
+						<label class="col-sm-2 control-label" for="textinput">Email</label>  
+						<div class="col-sm-4">
+							<input id="email" name="email" placeholder="Email Para Contato" class="form-control input-md" required="" type="text">
 
 						</div>
 					</div>
 
 					<!-- Text input-->
 					<div class="form-group">
-						<label class="col-md-4 control-label" for="textinput">Telefone</label>  
-						<div class="col-md-2">
-							<input id="tel" placeholder="Informe Telefone de Contato" class="form-control input-md" required="" type="text">
+						<label class="col-sm-2 control-label" for="textinput">Telefone</label>  
+						<div class="col-sm-2">
+							<input id="tel" name="tel" placeholder="Informe Telefone de Contato" class="form-control input-md" required="" type="text">
 
 						</div>
 					</div>
 
 					<!-- Prepended text-->
 					<div class="form-group">
-						<label class="col-md-4 control-label" for="prependedtext">Documentação</label>
-						<div class="col-md-3">
+						<label class="col-sm-2 control-label" for="prependedtext">Documentação</label>
+						<div class="col-sm-3">
 							<div class="input-group">
 								<span class="input-group-addon">Nº CPF</span>
-								<input id="cpf" class="form-control" placeholder="" required="" type="text">
+								<input id="cpf" name="cpf" class="form-control" placeholder="" required="" type="text">
 							</div>
 						</div>
-						<div class="col-md-3">
+						<div class="col-sm-3">
 							<div class="input-group">
 								<span class="input-group-addon">Nº RG</span>
-								<input id="rg" class="form-control" placeholder="" required="" type="text">
+								<input id="rg" name="rg" class="form-control" placeholder="" required="" type="text">
 							</div>
 
 						</div>
@@ -68,8 +68,8 @@
 
 					<!-- Multiple Radios (inline) -->
 					<div class="form-group">
-						<label class="col-md-4 control-label" for="radios">Sexo</label>
-						<div class="col-md-4"> 
+						<label class="col-sm-2 control-label" for="radios">Sexo</label>
+						<div class="col-sm-4"> 
 							<label class="radio-inline" for="radios-0">
 								<input name="radios" id="feminino" value="feminino" type="radio">
 								Feminino
@@ -79,65 +79,74 @@
 								Masculino
 							</label>
 						</div>
-					</div>
+					</div><hr>
 
 					<!-- Text input-->
 					<div class="form-group">
-						<label class="col-md-4 control-label" for="textinput">Endereço</label>  
-						<div class="col-md-4">
-							<input id="endereco" name="textinput" placeholder="Logadouro, Número, Bairro" class="form-control input-md" required="" type="text">
-
+						<!--CEP-->
+						<div class="col-sm-2">
+							<label class="control-label" for="textinput">CEP</label>
+							<div class="input-group">								
+								<input onblur="buscaCep();" id="cep" name="cep" class="form-control" placeholder="" required="" type="text">
+								<span class="input-group-addon"><span class="glyphicon glyphicon-globe text-primary"></span></span>
+							</div>
+						</div>
+						<!--LOGADOURO-->					
+						<div class="col-sm-6">
+							<label class="control-label" for="textinput">Endereço</label>  
+							<input id="logradouro" name="logradouro" value="oi" placeholder="Logadouro" class="form-control input-md" required="" type="text">
+						</div>
+						<!--NUMERO-->
+						<div class="col-sm-1">
+							<label class="control-label" for="textinput">Número</label>							
+							<input id="numero" name="numero" class="form-control" placeholder="" required="" type="text">
 						</div>
 					</div>
 
-					<!-- Select Basic -->
 					<div class="form-group">
-						<label class="col-md-4 control-label" for="selectbasic">Estado</label>
-						<div class="col-md-4">
-							<select name="estados-brasil" id="estado">
-								<option value="0">SELECIONE SEU ESTADO</option>
-								<option value="AC">Acre</option>
-								<option value="AL">Alagoas</option>
-								<option value="AP">Amapá</option>
-								<option value="AM">Amazonas</option>
-								<option value="BA">Bahia</option>
-								<option value="CE">Ceará</option>
-								<option value="DF">Distrito Federal</option>
-								<option value="ES">Espírito Santo</option>
-								<option value="GO">Goiás</option>
-								<option value="MA">Maranhão</option>
-								<option value="MT">Mato Grosso</option>
-								<option value="MS">Mato Grosso do Sul</option>
-								<option value="MG">Minas Gerais</option>
-								<option value="PA">Pará</option>
-								<option value="PB">Paraíba</option>
-								<option value="PR">Paraná</option>
-								<option value="PE">Pernambuco</option>
-								<option value="PI">Piauí</option>
-								<option value="RJ">Rio de Janeiro</option>
-								<option value="RN">Rio Grande do Norte</option>
-								<option value="RS">Rio Grande do Sul</option>
-								<option value="RO">Rondônia</option>
-								<option value="RR">Roraima</option>
-								<option value="SC">Santa Catarina</option>
-								<option value="SP">São Paulo</option>
-								<option value="SE">Sergipe</option>
-								<option value="TO">Tocantins</option>
-							</select>
+						<!--BAIRRO-->
+						<div class="col-sm-5">
+							<label class="control-label" for="textinput">Bairro</label>							
+								<input id="bairro" name="bairro" class="form-control" required="" type="text">
 						</div>
+						<!--COMPLEMENTO-->					
+						<div class="col-sm-4">
+							<label class="control-label" for="textinput">Complemento</label>  
+							<input id="complemento" name="complemento" class="form-control input-md" required="" type="text">
+						</div>						
 					</div>
+
+					<div class="form-group">
+						<!--CIDADE-->
+						<div class="col-sm-5">
+							<label class="control-label" for="textinput">Cidade</label>							
+								<input id="cidade" name="cidade" class="form-control" required="" type="text">
+						</div>
+						<!--ESTADO-->					
+						<div class="col-sm-4">
+							<label class="control-label" for="textinput">Estado</label>  
+							<input id="estado" name="estado" class="form-control input-md" required="" type="text">
+						</div>						
+					</div>
+
+					
 
 					<!-- Button -->
 					<div class="form-group">
-						<label class="col-md-4 control-label" for="singlebutton"></label>
-						<div class="col-md-4">
-							<button type="button" class="btn btn-success" id="enviar">Enviar Dados</button>
+						<label class="col-sm-2 control-label" for="singlebutton"></label>
+						<div class="col-sm-4">
+							<button type="submit" class="btn btn-success">Enviar Dados</button>
 						</div>
 					</div>
 
 				</fieldset>
-			</form>			
+				 <p><input type="submit" /></p>
+			</form>
 		</div>
+
+
+		<pre id="result">
+</pre>
 
 		<fieldset>
 			<legend>Voluntários Cadastrados</legend>
